@@ -1,19 +1,29 @@
-extends Node2D
+extends KinematicBody2D
 
-export var speed = 400  # How fast the player will move (pixels/sec).
-var screen_size  # Size of the game window.
+export var run_speed = 400  # How fast the player will move (pixels/sec).
+export var jump_speed = -400
+export var gravity = 1200
 
-func _ready():
-	screen_size = get_viewport_rect().size
+var velocity = Vector2();
+var jumping = false;
+
+func get_input():
+	velocity.x = 0;
+	var right = Input.is_action_pressed("ui_right")
+	var left = Input.is_action_pressed("ui_left")
+	var jump = Input.is_action_just_pressed("ui_select")
+
+	if jump and is_on_floor():
+		jumping = true
+		velocity.y = jump_speed
+	if right:
+		velocity.x += run_speed
+	if left:
+		velocity.x -= run_speed
 
 func _process(delta):
-	var velocity = Vector2()  # The player's movement vector.
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-	if velocity.length() > 0:	#Not needed ATM
-		velocity = velocity.normalized() * speed
-	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	get_input()
+	velocity.y += gravity * delta
+	if jumping and is_on_floor():
+		jumping = false
+	velocity = move_and_slide(velocity, Vector2(0, -1))
