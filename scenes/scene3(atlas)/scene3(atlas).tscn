@@ -16,6 +16,7 @@ extents = Vector2( 10, 77.8498 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -0.398224, -39.1916 )
+run_speed = 110
 
 [node name="camera" parent="Player" index="1"]
 limit_left = -154
