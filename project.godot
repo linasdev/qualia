@@ -17,4 +17,4 @@ _global_script_class_icons={
 
 config/name="Qualia"
 run/main_scene="res://scenes/scene1/scene1.tscn"
-config/icon="res://scenes/common/icon.png"
+config/icon="res://scenes/common/assets/icon.png"
