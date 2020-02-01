@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/player/player.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/player.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://fonts/minecraft.tres" type="DynamicFont" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 81.2254, 0.877523 )
@@ -28,6 +29,7 @@ drag_margin_bottom = 1.0
 position = Vector2( 0, -0.135277 )
 frames = ExtResource( 2 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="interaction_info" type="Label" parent="."]
@@ -36,6 +38,7 @@ margin_top = -18.2707
 margin_right = 102.145
 margin_bottom = -4.27075
 rect_scale = Vector2( 0.340038, 0.329349 )
+custom_fonts/font = ExtResource( 3 )
 text = "Press 'e' to interact"
 __meta__ = {
 "_edit_use_anchors_": false
