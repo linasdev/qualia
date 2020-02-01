@@ -49,5 +49,5 @@ frames = SubResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource( 3 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="."]
 current = true
