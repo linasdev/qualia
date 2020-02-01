@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/common/assets/icon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1845.14, 38.7257 )
+extents = Vector2( 1845.14, 39.816 )
 
 [node name="Scene1" type="Node2D"]
 
@@ -14,9 +14,9 @@ position = Vector2( 4.51752, 73.7061 )
 [node name="ground" type="StaticBody2D" parent="."]
 
 [node name="collider" type="CollisionShape2D" parent="ground"]
-position = Vector2( 83.5653, 308.77 )
+position = Vector2( 83.565, 216.621 )
 shape = SubResource( 1 )
 
 [node name="icon" type="Sprite" parent="."]
-position = Vector2( -29.0008, 289.999 )
+position = Vector2( -29.001, 209.032 )
 texture = ExtResource( 2 )
