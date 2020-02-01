@@ -25,11 +25,17 @@ drag_margin_v_enabled = true
 drag_margin_top = 1.0
 drag_margin_bottom = 1.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="camera"]
+
+[node name="CenterContainer" type="CenterContainer" parent="camera/CanvasLayer"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="animated_sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -0.135277 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="interaction_info" type="Label" parent="."]
