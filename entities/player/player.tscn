@@ -16,6 +16,7 @@ shape = SubResource( 1 )
 
 [node name="camera" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.3, 0.3 )
 drag_margin_v_enabled = true
 drag_margin_top = 1.0
 drag_margin_bottom = 1.0
@@ -24,3 +25,14 @@ drag_margin_bottom = 1.0
 frames = ExtResource( 2 )
 animation = "idle"
 playing = true
+
+[node name="interaction_info" type="Label" parent="."]
+margin_left = -20.8551
+margin_top = -18.2707
+margin_right = 102.145
+margin_bottom = -4.27075
+rect_scale = Vector2( 0.340038, 0.329349 )
+text = "Press 'e' to interact"
+__meta__ = {
+"_edit_use_anchors_": false
+}

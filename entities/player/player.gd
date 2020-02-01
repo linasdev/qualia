@@ -45,3 +45,6 @@ func _physics_process(_delta):
 	if jumping and is_on_floor():
 		jumping = false
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+func _ready():
+	$interaction_info.hide()
