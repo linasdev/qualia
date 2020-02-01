@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/common/assets/icon.png" type="Texture" id=2]
@@ -62,7 +62,6 @@ rect_scale = Vector2( 2.16, 2.16 )
 custom_fonts/font = ExtResource( 6 )
 text = "this text is attaiched to camera for some reason
 this is a line of text to the end of the screeeeeeeeeeeeeen"
-percent_visible = -0.025
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -80,6 +79,7 @@ text = "this line goes through the screen and does not follow camera"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [node name="force_area" parent="." instance=ExtResource( 8 )]
 position = Vector2( 70.4996, 167.283 )
 scale = Vector2( 0.493999, 0.446756 )
