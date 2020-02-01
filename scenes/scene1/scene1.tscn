@@ -23,5 +23,5 @@ texture = ExtResource( 2 )
 position = Vector2( 4.51752, 73.7061 )
 
 [node name="scene_changer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 256.082, 231.496 )
+position = Vector2( 274.259, 142.885 )
 target_scene = "res://scenes/scene2/scene2.tscn"
