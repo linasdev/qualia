@@ -14,13 +14,8 @@ position = Vector2( -0.0852585, 4.47247 )
 scale = Vector2( 0.0768209, -13.3247 )
 shape = SubResource( 1 )
 
-[node name="camera" type="Camera2D" parent="."]
-current = true
-drag_margin_v_enabled = true
-drag_margin_top = 1.0
-drag_margin_bottom = 1.0
-
 [node name="animated_sprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
 animation = "idle"
+frame = 1
 playing = true
