@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/scene3(atlas)/assets/atlasas.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 241.306, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 77.9396 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 77.8498 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -0.398224, -39.1916 )
+
+[node name="camera" parent="Player" index="1"]
+limit_left = -154
+limit_right = 327
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 7.62939e-06, -3.8147e-06 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 86.2568, -2.94658 )
+shape = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+follow_viewport_enable = true
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 86.0854, -38.0799 )
+scale = Vector2( 0.71868, 0.71868 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2( -165.222, -52.453 )
+shape = SubResource( 2 )
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2( 338.102, -52.3054 )
+shape = SubResource( 3 )
+
+[editable path="Player"]
