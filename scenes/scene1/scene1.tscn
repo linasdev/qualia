@@ -61,7 +61,6 @@ rect_scale = Vector2( 2.16, 2.16 )
 custom_fonts/font = ExtResource( 6 )
 text = "this text is attaiched to camera for some reason
 this is a line of text to the end of the screeeeeeeeeeeeeen"
-percent_visible = -0.025
 __meta__ = {
 "_edit_use_anchors_": false
 }

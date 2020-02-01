@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var run_speed = 50  # How fast the player will move (pixels/sec).
+export var run_speed = 65  # How fast the player will move (pixels/sec).
 export var jump_speed = -150
 export var gravity = 5
 
