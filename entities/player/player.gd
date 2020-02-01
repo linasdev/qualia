@@ -70,8 +70,11 @@ func _physics_process(delta):
 	
 	velocity += velocity_modifiers
 	
-	if jumping and is_on_floor():
-		jumping = false
+	if is_on_floor():
+		if jumping:
+			jumping = false
+		else:
+			velocity_modifiers.y = min(0, velocity_modifiers.y)
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 func _ready():
