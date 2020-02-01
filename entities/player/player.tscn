@@ -4,13 +4,13 @@
 [ext_resource path="res://entities/player/player.tres" type="SpriteFrames" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 363.621, 4.15705 )
+extents = Vector2( 81.2254, 0.877523 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
 [node name="collider" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 24.5465 )
+position = Vector2( -0.0852585, 4.47247 )
 scale = Vector2( 0.0768209, -13.3247 )
 shape = SubResource( 1 )
 
@@ -21,7 +21,6 @@ drag_margin_top = 1.0
 drag_margin_bottom = 1.0
 
 [node name="animated_sprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 5, 5 )
 frames = ExtResource( 2 )
 animation = "idle"
 playing = true
