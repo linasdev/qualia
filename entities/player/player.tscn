@@ -14,6 +14,9 @@ shape = SubResource( 1 )
 
 [node name="camera" type="Camera2D" parent="."]
 current = true
+drag_margin_v_enabled = true
+drag_margin_top = 1.0
+drag_margin_bottom = 1.0
 
 [node name="animated_sprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 2 )
