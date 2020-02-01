@@ -39,10 +39,10 @@ animation = "idle"
 playing = true
 
 [node name="interaction_info" type="Label" parent="."]
-margin_left = -20.8551
+margin_left = -25.8551
 margin_top = -18.2707
-margin_right = 102.145
-margin_bottom = -4.27075
+margin_right = 125.145
+margin_bottom = -2.2707
 rect_scale = Vector2( 0.340038, 0.329349 )
 custom_fonts/font = ExtResource( 3 )
 text = "Press 'e' to interact"
