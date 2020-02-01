@@ -35,7 +35,7 @@ func process_interactability():
 	interactableObject = null
 	$interaction_info.hide()
 	for body in $interaction_area.get_overlapping_bodies():
-		if body.get_name() == "npc":
+		if body.get_name() == "npc" or body.get_name() == "scene_changer":
 			interactableObject = body
 	if interactableObject != null:
 		$interaction_info.show()
