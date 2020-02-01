@@ -74,7 +74,7 @@ func _physics_process(delta):
 		if jumping:
 			jumping = false
 		else:
-			velocity_modifiers.y = 0
+			velocity_modifiers.y = min(0, velocity_modifiers.y)
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 func _ready():
