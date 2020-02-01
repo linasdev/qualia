@@ -16,8 +16,5 @@ _global_script_class_icons={
 [application]
 
 config/name="Qualia"
-config/icon="res://icon.png"
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"
+run/main_scene="res://scenes/scene1/scene1.tscn"
+config/icon="res://scenes/common/icon.png"
