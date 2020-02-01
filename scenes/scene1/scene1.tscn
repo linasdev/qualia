@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/common/assets/icon.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/common/assets/npc1.png" type="Texture" id=5]
 [ext_resource path="res://fonts/minecraft.tres" type="DynamicFont" id=6]
 [ext_resource path="res://entities/torch/torch.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1845.14, 39.816 )
@@ -78,5 +79,22 @@ text = "this line goes through the screen and does not follow camera"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="force_area" parent="." instance=ExtResource( 8 )]
+position = Vector2( 70.4996, 167.283 )
+scale = Vector2( 0.493999, 0.446756 )
+horizontal_boost = 300
+vertical_boost = -150
+
+[node name="force_area2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2.63487, 167.836 )
+scale = Vector2( 0.493999, 0.446756 )
+horizontal_boost = 300
+vertical_boost = 1200
+
+[node name="force_area3" parent="." instance=ExtResource( 8 )]
+position = Vector2( -67.9559, 168.086 )
+scale = Vector2( 0.493999, 0.446756 )
+horizontal_boost = 500
 
 [editable path="npc"]

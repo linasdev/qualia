@@ -2,16 +2,18 @@ extends KinematicBody2D
 
 export var run_speed = 65  # How fast the player will move (pixels/sec).
 export var jump_speed = -150
-export var gravity = 5
+export var gravity = 300
+export var horizontal_slowdown = 300
 
-var velocity = Vector2();
-var jumping = false;
-var interactableObject;
+var velocity = Vector2()
+var velocity_modifiers = Vector2()
+var jumping = false
+var interactableObject
 
 func _input(event):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jumping = true
-		velocity.y = jump_speed
+		velocity_modifiers.y = jump_speed
 	if Input.is_action_just_pressed("interact"):
 		interact()
 
@@ -50,15 +52,24 @@ func _process(_delta):
 
 # Skiela istryne get_input ir pakeite struktura, atleiskit, kolegos :(
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	var right = Input.is_action_pressed("ui_right")
 	var left = Input.is_action_pressed("ui_left")
-	velocity.x = 0;	
+	velocity = Vector2(0, 0)
 	if right:
 		velocity.x += run_speed
 	if left:
 		velocity.x -= run_speed
-	velocity.y += gravity
+	
+	velocity_modifiers.y += gravity * delta
+	if velocity_modifiers.x > 0:
+		velocity_modifiers.x = max(0, velocity_modifiers.x - horizontal_slowdown * delta)
+	else:
+		velocity_modifiers.x = min(0, velocity_modifiers.x + horizontal_slowdown * delta)
+	
+	
+	velocity += velocity_modifiers
+	
 	if jumping and is_on_floor():
 		jumping = false
 	velocity = move_and_slide(velocity, Vector2(0, -1))
