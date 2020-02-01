@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export var run_speed = 400  # How fast the player will move (pixels/sec).
-export var jump_speed = -400
-export var gravity = 1200
+export var run_speed = 50  # How fast the player will move (pixels/sec).
+export var jump_speed = -150
+export var gravity = 5
 
 var velocity = Vector2();
 var jumping = false;
@@ -21,9 +21,27 @@ func get_input():
 	if left:
 		velocity.x -= run_speed
 
-func _process(delta):
+func _process(_delta):
 	get_input()
-	velocity.y += gravity * delta
+	var animation = ""
+
+	if velocity.x > 0:
+		animation = "walk_right"
+	elif velocity.x < 0:
+		animation = "walk_left"
+	else:
+		animation = "idle"
+
+	if velocity.y > 0:
+		animation = "fall"
+	elif velocity.y < 0:
+		animation = "jump"
+
+	$animated_sprite.set_animation(animation)
+
+		
+func _physics_process(_delta):
+	velocity.y += gravity
 	if jumping and is_on_floor():
 		jumping = false
 	velocity = move_and_slide(velocity, Vector2(0, -1))

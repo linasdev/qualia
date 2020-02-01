@@ -19,6 +19,13 @@ config/name="Qualia"
 run/main_scene="res://scenes/scene1/scene1.tscn"
 config/icon="res://scenes/common/assets/icon.png"
 
+[display]
+
+window/size/width=448
+window/size/height=252
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [importer_defaults]
 
 texture={
@@ -41,3 +48,7 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+
+[rendering]
+
+quality/2d/use_pixel_snap=true
