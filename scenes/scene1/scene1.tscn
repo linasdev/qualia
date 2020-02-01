@@ -6,6 +6,7 @@
 [ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/common/assets/npc1.png" type="Texture" id=5]
 [ext_resource path="res://fonts/minecraft.tres" type="DynamicFont" id=6]
+[ext_resource path="res://entities/torch/torch.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1845.14, 39.816 )
@@ -24,6 +25,9 @@ texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 7.08963, 126.006 )
+
+[node name="Node2D" parent="Player" instance=ExtResource( 7 )]
+position = Vector2( 6.238, -21.577 )
 
 [node name="scene_changer" parent="." instance=ExtResource( 3 )]
 position = Vector2( 274.259, 142.885 )

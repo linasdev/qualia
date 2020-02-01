@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/torch/light_texture.png" type="Texture" id=1]
+[ext_resource path="res://entities/torch/torch.tres" type="SpriteFrames" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 0.446262, 5.02048 )
+texture = ExtResource( 1 )
+mode = 3
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.505096, 16.7341 )
+scale = Vector2( 0.090359, 0.410002 )
+frames = ExtResource( 2 )
