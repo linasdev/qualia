@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/common/assets/icon.png" type="Texture" id=2]
 [ext_resource path="res://entities/scene_changer/scene_changer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/common/assets/npc1.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1845.14, 39.816 )
@@ -28,4 +29,15 @@ position = Vector2( 274.259, 142.885 )
 target_scene = "res://scenes/scene2/scene2.tscn"
 
 [node name="npc" parent="." instance=ExtResource( 4 )]
-position = Vector2( -218.274, 143.939 )
+position = Vector2( -218.787, 150.099 )
+
+[node name="Sprite" parent="npc" index="0"]
+texture = ExtResource( 5 )
+
+[node name="dialogue_bubble" parent="npc" index="2"]
+position = Vector2( 0, -40.0409 )
+
+[node name="Label" parent="npc/dialogue_bubble" index="0"]
+percent_visible = 1.0
+
+[editable path="npc"]

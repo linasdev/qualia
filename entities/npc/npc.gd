@@ -1,12 +1,10 @@
 extends StaticBody2D
 
+var sample_text = "This is text aaaaaaaaaaaaaaaaaaaaaaaaa as asddf dfd fd df d fdfdfd"
 
+func interact():
+	$dialogue_bubble/Label.text = sample_text
+	$dialogue_bubble.show()
 
-func _on_interaction_range_entered(body):
-	if body.get_name() == "Player":
-		body.get_node("interaction_info").show()
-
-
-func _on_interaction_range_exited(body):
-	if body.get_name() == "Player":
-		body.get_node("interaction_info").hide()
+func _ready():
+	$dialogue_bubble.hide()
