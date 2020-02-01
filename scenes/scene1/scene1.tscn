@@ -1,24 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://entities/player/Player.png" type="Texture" id=2]
-[ext_resource path="res://entities/player/Player.gd" type="Script" id=3]
+[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/common/assets/icon.png" type="Texture" id=2]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1845.14, 38.7257 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 30.7892, 31.2502 )
+[node name="Scene1" type="Node2D"]
 
-[node name="Player" type="KinematicBody2D"]
-script = ExtResource( 3 )
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4.51752, 73.7061 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
+[node name="ground" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+[node name="collider" type="CollisionShape2D" parent="ground"]
+position = Vector2( 83.5653, 308.77 )
+shape = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( -29.0008, 289.999 )
+texture = ExtResource( 2 )
