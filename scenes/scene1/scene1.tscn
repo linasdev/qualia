@@ -10,6 +10,7 @@
 extents = Vector2( 1845.14, 39.816 )
 
 [node name="Scene1" type="Node2D"]
+position = Vector2( 0, -155.083 )
 
 [node name="ground" type="StaticBody2D" parent="."]
 
@@ -22,7 +23,7 @@ position = Vector2( -29.001, 209.032 )
 texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 7.08963, 126.006 )
+position = Vector2( -5.8226, 122.833 )
 
 [node name="scene_changer" parent="." instance=ExtResource( 3 )]
 position = Vector2( 274.259, 142.885 )
