@@ -22,6 +22,9 @@ run_speed = 110
 limit_left = -154
 limit_right = 327
 
+[node name="animated_sprite" parent="Player" index="2"]
+frame = 0
+
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
 
@@ -34,17 +37,14 @@ layer = -1
 follow_viewport_enable = true
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 86.0854, -38.0799 )
+position = Vector2( 85.916, -38.8884 )
 scale = Vector2( 0.71868, 0.71868 )
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2( -165.222, -52.453 )
+position = Vector2( -165.222, -53.453 )
 shape = SubResource( 2 )
 
 [node name="RightWall" type="StaticBody2D" parent="."]
