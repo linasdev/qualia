@@ -29,7 +29,7 @@ extents = Vector2( 11.8068, 20.7396 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -108.211, -29.9515 )
+position = Vector2( -115.398, -39.1916 )
 run_speed = 75
 gravity = 200
 horizontal_slowdown = 200
@@ -142,6 +142,9 @@ shape = SubResource( 5 )
 position = Vector2( -6.79875, -26.5073 )
 scale = Vector2( 0.575174, 0.571443 )
 texture = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Label" type="Label" parent="npc/dialogue_bubble"]
 margin_left = -45.0
