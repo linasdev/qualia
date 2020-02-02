@@ -40,6 +40,9 @@ limit_bottom = 103
 drag_margin_top = 0.5
 drag_margin_bottom = 0.0
 
+[node name="animated_sprite" parent="Player" index="2"]
+frame = 1
+
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
 
@@ -88,6 +91,7 @@ boost = 150
 
 [node name="npc" type="StaticBody2D" parent="."]
 position = Vector2( 338.225, -6.9248 )
+z_index = 1
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -132,6 +136,7 @@ autoplay = true
 [node name="scene_changer" parent="." instance=ExtResource( 8 )]
 visible = false
 position = Vector2( 139.859, 8.84772 )
+z_index = -3
 target_scene = "res://scenes/scene3(atlas)/scene3(atlas).tscn"
 
 [node name="CanvasLayer2" parent="." instance=ExtResource( 10 )]
