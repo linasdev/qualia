@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/scene3(atlas)/assets/atlasas.png" type="Texture" id=2]
 [ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sienablt.png" type="Texture" id=4]
 [ext_resource path="res://entities/Fader/Fader.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -13,6 +14,9 @@ extents = Vector2( 10, 77.9396 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 77.8498 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 7.01515, 54.6672 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -25,6 +29,9 @@ horizontal_slowdown = 200
 [node name="camera" parent="Player" index="1"]
 limit_left = -154
 limit_right = 327
+
+[node name="animated_sprite" parent="Player" index="2"]
+frame = 0
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
@@ -58,25 +65,19 @@ position = Vector2( 337.102, -52.3054 )
 shape = SubResource( 3 )
 
 [node name="force_area" parent="." instance=ExtResource( 3 )]
-position = Vector2( -45.916, -18.4086 )
+position = Vector2( -44.416, -26.4086 )
 z_index = -3
 horizontal_boost = 70
 vertical_boost = -110
 
 [node name="force_area2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 59.584, -66.9086 )
+position = Vector2( 83.584, -83.9086 )
 z_index = -3
 horizontal_boost = 70
 vertical_boost = -110
 
 [node name="force_area3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 8.58399, -45.9086 )
-z_index = -3
-horizontal_boost = 70
-vertical_boost = -110
-
-[node name="force_area4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 109.584, -94.9086 )
+position = Vector2( 21.584, -56.9086 )
 z_index = -3
 horizontal_boost = 70
 vertical_boost = -110
@@ -88,15 +89,15 @@ horizontal_boost = 70
 vertical_boost = -145
 
 [node name="force_area6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 252.084, -61.9086 )
+position = Vector2( 305.584, -66.4086 )
 z_index = -3
 horizontal_boost = 70
 vertical_boost = -145
 
 [node name="force_area7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 272.584, -110.909 )
+position = Vector2( 305.584, -122.409 )
 z_index = -3
-horizontal_boost = -390
+horizontal_boost = -420
 
 [node name="Roof" type="StaticBody2D" parent="."]
 
@@ -105,5 +106,16 @@ position = Vector2( 86.2568, -137.947 )
 shape = SubResource( 1 )
 
 [node name="Fader" parent="." instance=ExtResource( 5 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 153.5, -48.75 )
+scale = Vector2( 1, 0.650442 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( 0.5, 0.768707 )
+shape = SubResource( 4 )
 
 [editable path="Player"]
