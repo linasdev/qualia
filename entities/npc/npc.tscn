@@ -5,7 +5,7 @@
 [ext_resource path="res://entities/npc/textbox.png" type="Texture" id=3]
 [ext_resource path="res://fonts/minecraft.tres" type="DynamicFont" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 32.3189, 31.7736 )
 
 [node name="npc" type="StaticBody2D"]
@@ -17,7 +17,7 @@ texture = ExtResource( 2 )
 
 [node name="npc_collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -0.307358 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="dialogue_bubble" type="Sprite" parent="."]
 position = Vector2( 0, -49.0409 )

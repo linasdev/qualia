@@ -1,12 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/vortex/vortex.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/scene4(desert)/assets/adaddaaa.png" type="Texture" id=4]
-[ext_resource path="res://scenes/scene4(desert)/assets/Coyotes Howling at Moon Sound Effect Free Coyote Sounds.ogg" type="AudioStream" id=5]
-[ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/scene4(desert)/npc.gd" type="Script" id=5]
+[ext_resource path="res://fonts/minecraft.tres" type="DynamicFont" id=6]
+[ext_resource path="res://entities/npc/npc.png" type="Texture" id=7]
 [ext_resource path="res://entities/scene_changer/scene_changer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/npc/textbox.png" type="Texture" id=9]
+[ext_resource path="res://scenes/scene4(desert)/assets/Coyotes Howling at Moon Sound Effect Free Coyote Sounds.ogg" type="AudioStream" id=42]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 305.381, 10 )
@@ -16,6 +19,9 @@ extents = Vector2( 10, 114.026 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 131.674 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 32.3189, 31.7736 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -32,6 +38,9 @@ limit_right = 327
 limit_bottom = 103
 drag_margin_top = 0.5
 drag_margin_bottom = 0.0
+
+[node name="animated_sprite" parent="Player" index="2"]
+frame = 1
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
@@ -79,31 +88,50 @@ shape = SubResource( 1 )
 position = Vector2( 50.8836, -59.0764 )
 boost = 150
 
-[node name="scene_changer" parent="." instance=ExtResource( 8 )]
-visible = false
-show_behind_parent = true
-position = Vector2( -223.818, -45.7407 )
+[node name="npc" type="Area2D" parent="."]
+position = Vector2( 244.301, -12.6675 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="npc" parent="." instance=ExtResource( 7 )]
-position = Vector2( 285.619, -11.3638 )
-sample_text = "Door is locked"
-
-[node name="Sprite" parent="npc" index="0"]
+[node name="Sprite" type="Sprite" parent="npc"]
 position = Vector2( 6.82074, 18.5 )
 scale = Vector2( 0.3, 0.5 )
+texture = ExtResource( 7 )
 
-[node name="npc_collider" parent="npc" index="1"]
+[node name="npc_collider" type="CollisionShape2D" parent="npc"]
 position = Vector2( 7, 18.1926 )
 scale = Vector2( 0.3, 0.5 )
+shape = SubResource( 4 )
 
-[node name="dialogue_bubble" parent="npc" index="2"]
+[node name="dialogue_bubble" type="Sprite" parent="npc"]
 position = Vector2( 5.5, -2.0409 )
 scale = Vector2( 0.505, 0.436 )
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="npc/dialogue_bubble"]
+margin_left = -45.0
+margin_top = -11.0
+margin_right = 140.0
+margin_bottom = 31.0
+rect_scale = Vector2( 0.493999, 0.446756 )
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+autowrap = true
+max_lines_visible = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 42 )
 autoplay = true
 
-[editable path="Player"]
+[node name="scene_changer" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 139.859, 8.84772 )
+target_scene = "res://scenes/scene3(atlas)/scene3(atlas).tscn"
 
-[editable path="npc"]
+[editable path="Player"]

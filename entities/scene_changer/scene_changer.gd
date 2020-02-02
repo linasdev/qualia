@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Area2D
 
 export(String, FILE, "*.tscn") var target_scene
 
