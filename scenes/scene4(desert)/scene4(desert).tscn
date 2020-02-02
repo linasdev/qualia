@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/scene4(desert)/assets/adaddaaan_1.png" type="Texture" id=4]
 [ext_resource path="res://scenes/scene4(desert)/npc.gd" type="Script" id=5]
 [ext_resource path="res://fonts/minecraft.tres" type="DynamicFont" id=6]
-[ext_resource path="res://entities/npc/npc.png" type="Texture" id=7]
+[ext_resource path="res://scenes/scene4(desert)/assets/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.png" type="Texture" id=7]
 [ext_resource path="res://entities/scene_changer/scene_changer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/npc/textbox.png" type="Texture" id=9]
 [ext_resource path="res://scenes/scene4(desert)/assets/Coyotes Howling at Moon Sound Effect Free Coyote Sounds.ogg" type="AudioStream" id=42]
@@ -89,11 +89,12 @@ position = Vector2( 50.8836, -59.0764 )
 boost = 150
 
 [node name="npc" type="Area2D" parent="."]
-position = Vector2( 244.301, -12.6675 )
+position = Vector2( 297.334, -25.3954 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
+sample_text = "Some sample text"
 
 [node name="Sprite" type="Sprite" parent="npc"]
 position = Vector2( 6.82074, 18.5 )
@@ -119,6 +120,7 @@ rect_scale = Vector2( 0.493999, 0.446756 )
 custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -2
+text = "Some sample text"
 autowrap = true
 max_lines_visible = 3
 __meta__ = {
