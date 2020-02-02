@@ -27,9 +27,6 @@ horizontal_slowdown = 200
 limit_left = -154
 limit_right = 327
 
-[node name="animated_sprite" parent="Player" index="2"]
-frame = 1
-
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
 
@@ -62,19 +59,7 @@ position = Vector2( 337.102, -52.3054 )
 shape = SubResource( 3 )
 
 [node name="force_area" parent="." instance=ExtResource( 3 )]
-position = Vector2( -38.416, -37.9086 )
-z_index = -3
-horizontal_boost = 90
-vertical_boost = -140
-
-[node name="force_area2" parent="." instance=ExtResource( 3 )]
-position = Vector2( -15.916, -56.4086 )
-z_index = -3
-horizontal_boost = 90
-vertical_boost = -140
-
-[node name="force_area3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 7.58399, -71.9086 )
+position = Vector2( -35.916, -40.4086 )
 z_index = -3
 horizontal_boost = 90
 vertical_boost = -140
@@ -89,6 +74,6 @@ shape = SubResource( 1 )
 position = Vector2( 50.8836, -59.0764 )
 boost = 150
 
-[node name="CanvasLayer2" parent="." instance=ExtResource( 5 )]
+[node name="Fader" parent="." instance=ExtResource( 5 )]
 
 [editable path="Player"]

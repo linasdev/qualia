@@ -31,11 +31,9 @@ limit_left = -225
 limit_top = -125
 limit_right = 225
 limit_bottom = 105
-drag_margin_top = 0.5
-drag_margin_bottom = 0.0
 
 [node name="animated_sprite" parent="Player" index="2"]
-frame = 1
+frame = 0
 
 [node name="force_area" parent="." instance=ExtResource( 3 )]
 position = Vector2( -119.721, 45.9685 )
@@ -53,6 +51,6 @@ vertical_boost = -150
 position = Vector2( -118.467, -79.737 )
 vertical_boost = -150
 
-[node name="CanvasLayer2" parent="." instance=ExtResource( 4 )]
+[node name="Fader" parent="." instance=ExtResource( 4 )]
 
 [editable path="Player"]

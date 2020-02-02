@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/scene6(forest)/assets/forest.png" type="Texture" id=2]
 [ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/Fader/Fader.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -25,7 +26,7 @@ limit_right = 222
 limit_bottom = 124
 
 [node name="animated_sprite" parent="Player" index="2"]
-frame = 1
+frame = 0
 
 [node name="floor" type="StaticBody2D" parent="."]
 
@@ -42,5 +43,7 @@ polygon = PoolVector2Array( -335.25, 17.4803, -334.552, -192.02, 112.382, -192.7
 [node name="force_area" parent="." instance=ExtResource( 3 )]
 position = Vector2( 21.8652, 13.2502 )
 vertical_boost = -1000
+
+[node name="Fader" parent="." instance=ExtResource( 4 )]
 
 [editable path="Player"]
