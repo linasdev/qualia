@@ -37,6 +37,9 @@ limit_right = 327
 limit_bottom = 103
 drag_margin_bottom = 0.0
 
+[node name="animated_sprite" parent="Player" index="2"]
+frame = 1
+
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
 
