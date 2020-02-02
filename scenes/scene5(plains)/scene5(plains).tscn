@@ -32,9 +32,6 @@ limit_top = -125
 limit_right = 225
 limit_bottom = 125
 
-[node name="animated_sprite" parent="Player" index="2"]
-frame = 0
-
 [node name="force_area" parent="." instance=ExtResource( 3 )]
 position = Vector2( -127.499, 45.9685 )
 vertical_boost = -150
@@ -79,7 +76,7 @@ polygon = PoolVector2Array( -224.149, 80.9676, -223.58, -125.505, 221.786, -124.
 
 [node name="scene_changer" parent="." instance=ExtResource( 6 )]
 position = Vector2( 211.376, -93.682 )
-target_scene = "res://scenes/scene6(forest)/scene6(forest).tscn"
+target_scene = "res://scenes/Tittle screen/Tittle scene.tscn"
 
 [node name="lava_changer" parent="." instance=ExtResource( 6 )]
 position = Vector2( 211.376, -93.682 )

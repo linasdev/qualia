@@ -75,7 +75,5 @@ position = Vector2( -209.049, 65.1643 )
 target_scene = "res://scenes/scene5(plains)/scene5(plains).tscn"
 
 [node name="Fader" parent="." instance=ExtResource( 5 )]
-offset = Vector2( 300, 0 )
-transform = Transform2D( 1, 0, 0, 1, 300, 0 )
 
 [editable path="Player"]

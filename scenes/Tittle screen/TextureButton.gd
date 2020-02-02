@@ -14,5 +14,5 @@ func _process(delta):
 	if time_passed >= 0:
 		time_passed += delta
 	if time_passed >= 1:
-		get_tree().change_scene("res://scenes/scene6(forest)/scene6(forest).tscn")
+		get_tree().change_scene("res://scenes/scene4(desert)/scene4(desert).tscn")
 		time_passed = -1
