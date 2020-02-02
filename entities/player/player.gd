@@ -1,14 +1,17 @@
 extends KinematicBody2D
 
 export var run_speed = 65  # How fast the player will move (pixels/sec).
+export var dash_speed = 165
 export var jump_speed = -150
 export var gravity = 300
 export var horizontal_slowdown = 300
+export var dash_cooldown = 1.5
 
 var velocity = Vector2()
 var velocity_modifiers = Vector2()
 var jumping = false
 var interactableObject
+var time_since_dash = dash_cooldown
 
 func _input(event):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -16,6 +19,8 @@ func _input(event):
 		velocity_modifiers.y = jump_speed
 	if Input.is_action_just_pressed("interact"):
 		interact()
+	if Input.is_action_just_pressed("dash") and time_since_dash > dash_cooldown:
+		dash()
 
 func process_animation():
 	var animation
@@ -45,10 +50,21 @@ func process_interactability():
 func interact():
 	if interactableObject != null:
 		interactableObject.interact()
+		
+func dash():
+	var right = Input.is_action_pressed("ui_right")
+	var left = Input.is_action_pressed("ui_left")
+	
+	if right:
+		velocity_modifiers.x += dash_speed
+	if left:
+		velocity_modifiers.x -= dash_speed
+	time_since_dash = 0
 
-func _process(_delta):
+func _process(delta):
 	process_animation()
 	process_interactability()
+	time_since_dash += delta
 
 # Skiela istryne get_input ir pakeite struktura, atleiskit, kolegos :(
 
