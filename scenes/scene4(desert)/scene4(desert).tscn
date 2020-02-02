@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/scene3(atlas)/assets/atlasas.png" type="Texture" id=2]
-[ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=3]
-[ext_resource path="res://entities/vortex/vortex.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/vortex/vortex.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/scene4(desert)/assets/adaddaaa.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 241.306, 10 )
+extents = Vector2( 244.381, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 77.9396 )
@@ -17,23 +17,21 @@ extents = Vector2( 10, 77.8498 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -115.398, -39.1916 )
+position = Vector2( -36.898, -0.191605 )
 run_speed = 75
 gravity = 200
 horizontal_slowdown = 200
 
 [node name="camera" parent="Player" index="1"]
-limit_left = -154
+zoom = Vector2( 0.3, 0.22 )
+limit_left = -76
 limit_right = 327
-
-[node name="animated_sprite" parent="Player" index="2"]
-frame = 0
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2( 86.2568, -2.94658 )
+position = Vector2( 84.2568, 30.5534 )
 shape = SubResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -41,9 +39,9 @@ layer = -1
 follow_viewport_enable = true
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 86.0854, -38.0799 )
-scale = Vector2( 0.71868, 0.71868 )
-texture = ExtResource( 2 )
+position = Vector2( 126.808, -60.5799 )
+scale = Vector2( 0.896011, 1.00836 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -51,16 +49,16 @@ __meta__ = {
 [node name="LeftWall" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2( -165.222, -52.453 )
+position = Vector2( -82.722, -56.453 )
 shape = SubResource( 2 )
 
 [node name="RightWall" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2( 337.102, -52.3054 )
+position = Vector2( 328.102, -56.8054 )
 shape = SubResource( 3 )
 
-[node name="force_area" parent="." instance=ExtResource( 3 )]
+[node name="force_area" parent="." instance=ExtResource( 2 )]
 position = Vector2( -35.916, -40.4086 )
 z_index = -3
 horizontal_boost = 90
@@ -72,7 +70,7 @@ vertical_boost = -140
 position = Vector2( 86.2568, -137.947 )
 shape = SubResource( 1 )
 
-[node name="Vortex" parent="." instance=ExtResource( 4 )]
+[node name="Vortex" parent="." instance=ExtResource( 3 )]
 position = Vector2( 50.8836, -59.0764 )
 boost = 150
 
