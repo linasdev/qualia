@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/scene5(plains)/assets/plains.png" type="Texture" id=1]
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/Fader/Fader.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/scene5(plains)/platform.png" type="Texture" id=5]
+[ext_resource path="res://entities/scene_changer/scene_changer.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 225.249, 10 )
@@ -35,6 +36,9 @@ limit_left = -225
 limit_top = -125
 limit_right = 225
 limit_bottom = 105
+
+[node name="animated_sprite" parent="Player" index="2"]
+frame = 0
 
 [node name="force_area" parent="." instance=ExtResource( 3 )]
 position = Vector2( -127.499, 45.9685 )
@@ -76,5 +80,14 @@ texture = ExtResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
 position = Vector2( 1.01718, 1.1934 )
 shape = SubResource( 2 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( -224.122, 81.5257, -223.492, -126.455, 223.351, -125.194, 222.09, 101.694, 246.67, -132.757, -237.987, -131.497 )
+
+[node name="scene_changer" parent="." instance=ExtResource( 6 )]
+position = Vector2( 211.376, -93.682 )
+target_scene = "res://scenes/scene6(forest)/scene6(forest).tscn"
 
 [editable path="Player"]
