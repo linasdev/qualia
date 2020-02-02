@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Coyotes Howling at Moon Sound Effect Free Coyote Sounds.ogg-f1109b5a10154d1a73012b0b2f0fc716.oggstr"
+
+[deps]
+
+source_file="res://scenes/scene4(desert)/assets/Coyotes Howling at Moon Sound Effect Free Coyote Sounds.ogg"
+dest_files=[ "res://.import/Coyotes Howling at Moon Sound Effect Free Coyote Sounds.ogg-f1109b5a10154d1a73012b0b2f0fc716.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
