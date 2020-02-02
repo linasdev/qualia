@@ -28,11 +28,11 @@ texture = ExtResource( 2 )
 position = Vector2( 7.08963, 126.006 )
 
 [node name="Node2D" parent="Player" instance=ExtResource( 7 )]
-position = Vector2( 6.238, -21.577 )
+position = Vector2( 6.238, -22.6296 )
 
 [node name="scene_changer" parent="." instance=ExtResource( 3 )]
 position = Vector2( 274.259, 142.885 )
-target_scene = "res://scenes/scene2/scene2.tscn"
+target_scene = "res://scenes/scene3(atlas)/scene3(atlas).tscn"
 
 [node name="npc" parent="." instance=ExtResource( 4 )]
 position = Vector2( -218.787, 150.099 )
