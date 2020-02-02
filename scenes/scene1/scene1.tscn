@@ -28,7 +28,7 @@ texture = ExtResource( 2 )
 position = Vector2( 7.08963, 126.006 )
 
 [node name="Node2D" parent="Player" instance=ExtResource( 7 )]
-position = Vector2( 6.238, -22.6296 )
+position = Vector2( 6.238, -23.6822 )
 
 [node name="scene_changer" parent="." instance=ExtResource( 3 )]
 position = Vector2( 274.259, 142.885 )

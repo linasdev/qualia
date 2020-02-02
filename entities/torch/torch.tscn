@@ -6,11 +6,13 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 0.446262, 5.02048 )
+position = Vector2( 2.2191, -37.2901 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
-mode = 3
+color = Color( 0.603922, 0.603922, 0.603922, 1 )
+energy = 1.72
+mode = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.505096, 16.7341 )
-scale = Vector2( 0.090359, 0.410002 )
+position = Vector2( -20.5338, -7.61305 )
 frames = ExtResource( 2 )
