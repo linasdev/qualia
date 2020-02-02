@@ -40,6 +40,9 @@ limit_top = -127
 limit_right = 327
 limit_bottom = 52
 
+[node name="animated_sprite" parent="Player" index="2"]
+frame = 0
+
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
 
@@ -128,6 +131,7 @@ shape = SubResource( 4 )
 [node name="npc" type="StaticBody2D" parent="."]
 position = Vector2( 280.271, -36.4649 )
 script = ExtResource( 10 )
+sample_text = "Go back, I have opened a portal"
 
 [node name="Sprite" type="Sprite" parent="npc"]
 position = Vector2( -0.179254, 0 )
@@ -138,7 +142,8 @@ position = Vector2( 0, 3.79935 )
 shape = SubResource( 5 )
 
 [node name="dialogue_bubble" type="Sprite" parent="npc"]
-position = Vector2( -1.54004, -38.2608 )
+position = Vector2( -3.04004, -23.0108 )
+scale = Vector2( 0.5, 0.35 )
 texture = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
@@ -146,10 +151,10 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="npc/dialogue_bubble"]
 margin_left = -45.0
-margin_top = -11.0
-margin_right = 140.0
-margin_bottom = 31.0
-rect_scale = Vector2( 0.493999, 0.446756 )
+margin_top = -14.0
+margin_right = 142.0
+margin_bottom = 18.0
+rect_scale = Vector2( 0.493999, 0.789614 )
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -2
