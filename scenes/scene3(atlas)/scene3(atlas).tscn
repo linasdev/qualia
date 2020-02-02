@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/scene3(atlas)/assets/atlasas.png" type="Texture" id=2]
 [ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sienablt.png" type="Texture" id=4]
 [ext_resource path="res://entities/Fader/Fader.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/scene_changer/scene_changer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://fonts/minecraft.tres" type="DynamicFont" id=7]
+[ext_resource path="res://entities/npc/real_anub.png" type="Texture" id=8]
+[ext_resource path="res://entities/npc/textbox.png" type="Texture" id=9]
+[ext_resource path="res://scenes/scene3(atlas)/npc.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 241.306, 10 )
@@ -18,10 +23,13 @@ extents = Vector2( 10, 77.8498 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 7.01515, 54.6672 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 11.8068, 20.7396 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -115.398, -39.1916 )
+position = Vector2( -108.211, -29.9515 )
 run_speed = 75
 gravity = 200
 horizontal_slowdown = 200
@@ -31,9 +39,6 @@ limit_left = -156
 limit_top = -127
 limit_right = 327
 limit_bottom = 52
-
-[node name="animated_sprite" parent="Player" index="2"]
-frame = 0
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
@@ -119,5 +124,45 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
 position = Vector2( 0.5, 0.768707 )
 shape = SubResource( 4 )
+
+[node name="npc" type="StaticBody2D" parent="."]
+position = Vector2( 280.271, -36.4649 )
+script = ExtResource( 10 )
+sample_text = "Go back, I have opened a portal"
+
+[node name="Sprite" type="Sprite" parent="npc"]
+position = Vector2( -0.179254, 0 )
+texture = ExtResource( 8 )
+
+[node name="npc_collider" type="CollisionShape2D" parent="npc"]
+position = Vector2( 0, 3.79935 )
+shape = SubResource( 5 )
+
+[node name="dialogue_bubble" type="Sprite" parent="npc"]
+position = Vector2( -3.04004, -23.0108 )
+scale = Vector2( 0.5, 0.35 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="npc/dialogue_bubble"]
+margin_left = -45.0
+margin_top = -14.0
+margin_right = 142.0
+margin_bottom = 18.0
+rect_scale = Vector2( 0.493999, 0.789614 )
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+autowrap = true
+max_lines_visible = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scene_changer" parent="." instance=ExtResource( 6 )]
+visible = false
+position = Vector2( -135.02, -32.8715 )
 
 [editable path="Player"]
