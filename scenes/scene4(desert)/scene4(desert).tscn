@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://entities/scene_changer/scene_changer.gd" type="Script" id=6]
 [ext_resource path="res://entities/npc/npc.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/scene_changer/scene_changer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://fonts/minecraft.tres" type="DynamicFont" id=9]
+[ext_resource path="res://entities/npc/textbox.png" type="Texture" id=10]
+[ext_resource path="res://entities/npc/npc.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 305.381, 10 )
@@ -17,6 +20,9 @@ extents = Vector2( 10, 114.026 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 131.674 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10.4492, 19.8885 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -93,4 +99,38 @@ position = Vector2( 285.619, -11.3638 )
 script = ExtResource( 5 )
 sample_text = "Door is locked"
 
+[node name="Sprite" type="Sprite" parent="npc" index="0"]
+position = Vector2( 22.3207, 15.5 )
+scale = Vector2( 0.3125, 0.59375 )
+texture = ExtResource( 11 )
+
+[node name="npc_collider" type="CollisionShape2D" parent="npc" index="1"]
+position = Vector2( 23, 15.6926 )
+shape = SubResource( 4 )
+
+[node name="dialogue_bubble" type="Sprite" parent="npc" index="2"]
+position = Vector2( 20.6667, -10.2909 )
+scale = Vector2( 0.483333, 0.483333 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="npc/dialogue_bubble" index="0"]
+margin_left = -45.0
+margin_top = -11.0
+margin_right = 140.0
+margin_bottom = 31.0
+rect_scale = Vector2( 0.493999, 0.446756 )
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = -2
+autowrap = true
+max_lines_visible = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [editable path="Player"]
+
+[editable path="npc"]
