@@ -32,10 +32,11 @@ func process_animation():
 	else:
 		animation = "idle"
 
-	if velocity.y > 0:
-		animation = "fall"
-	elif velocity.y < 0:
-		animation = "jump"
+	if abs(velocity.y) < jump_speed / 10:
+		if velocity.y > 0:
+			animation = "fall"
+		elif velocity.y < 0:
+			animation = "jump"
 	$animated_sprite.set_animation(animation)
 
 func process_interactability():
@@ -95,7 +96,8 @@ func _physics_process(delta):
 			jumping = false
 		else:
 			velocity_modifiers.y = min(0, velocity_modifiers.y)
-	velocity = move_and_slide(velocity, Vector2(0, -1))
+	if velocity.length() > run_speed / 10: 
+		velocity = move_and_slide(velocity, Vector2(0, -1))
 	
 func _ready():
 	$interaction_info.hide()
