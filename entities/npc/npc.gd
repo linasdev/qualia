@@ -1,10 +1,11 @@
 extends StaticBody2D
 
-var sample_text = "This is text aaaaaaaaaaaaaaaaaaaaaaaaa as asddf dfd fd df d fdfdfd"
+export (String) var sample_text
 
 func interact():
 	$dialogue_bubble/Label.text = sample_text
 	$dialogue_bubble.show()
+	get_parent().get_node("scene_changer").show()
 
 func _ready():
 	$dialogue_bubble.hide()

@@ -46,9 +46,6 @@ position = Vector2( 0, 0.356064 )
 [node name="dialogue_bubble" parent="npc" index="2"]
 position = Vector2( 0, -40.0409 )
 
-[node name="Label" parent="npc/dialogue_bubble" index="0"]
-percent_visible = 1.0
-
 [node name="Following CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="Following CanvasLayer"]
