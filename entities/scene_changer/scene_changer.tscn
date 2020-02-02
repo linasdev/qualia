@@ -4,13 +4,17 @@
 [ext_resource path="res://entities/scene_changer/scene_changer.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.8654, 31.6988 )
+extents = Vector2( 26.866, 34.3781 )
 
-[node name="scene_changer" type="StaticBody2D"]
+[node name="scene_changer" type="Area2D"]
+scale = Vector2( 0.389246, 0.389246 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.37735, 0 )
+scale = Vector2( 0.548944, 0.548944 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2, 0.5 )
 shape = SubResource( 1 )
