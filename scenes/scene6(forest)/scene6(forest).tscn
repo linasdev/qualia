@@ -19,8 +19,11 @@ limit_top = -124
 limit_right = 222
 limit_bottom = 124
 
+[node name="animated_sprite" parent="Player" index="2"]
+frame = 0
+
 [node name="Node2D" parent="Player" instance=ExtResource( 4 )]
-position = Vector2( -0.486633, -0.237831 )
+position = Vector2( -1.40088, -1.15203 )
 
 [node name="floor" type="StaticBody2D" parent="."]
 

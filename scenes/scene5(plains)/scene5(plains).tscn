@@ -8,10 +8,10 @@
 [ext_resource path="res://entities/scene_changer/scene_changer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/scene5(plains)/assets/lava.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.12447, 3.26439 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 177.42, 10 )
 
 [node name="Node2D" type="Node2D"]
@@ -70,7 +70,7 @@ texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
 position = Vector2( 1.01718, 1.1934 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -89,7 +89,7 @@ target_scene = "res://scenes/scene5(plains)/scene5(plains).tscn"
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Lava"]
 position = Vector2( 44.366, 91.0072 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Lava"]
 position = Vector2( 44.577, 98 )

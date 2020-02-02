@@ -40,9 +40,6 @@ limit_top = -127
 limit_right = 327
 limit_bottom = 52
 
-[node name="animated_sprite" parent="Player" index="2"]
-frame = 0
-
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
 
@@ -131,31 +128,31 @@ shape = SubResource( 4 )
 [node name="npc" type="StaticBody2D" parent="."]
 position = Vector2( 280.271, -36.4649 )
 script = ExtResource( 10 )
+sample_text = "Only through journey can you repair your broken soul"
 
 [node name="Sprite" type="Sprite" parent="npc"]
 position = Vector2( -0.179254, 0 )
 texture = ExtResource( 8 )
 
 [node name="npc_collider" type="CollisionShape2D" parent="npc"]
-position = Vector2( 0, 3.79935 )
+position = Vector2( 0, 3.38123 )
 shape = SubResource( 5 )
 
 [node name="dialogue_bubble" type="Sprite" parent="npc"]
-position = Vector2( -1.54004, -38.2608 )
+position = Vector2( -6.79875, -26.5073 )
+scale = Vector2( 0.575174, 0.571443 )
 texture = ExtResource( 9 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Label" type="Label" parent="npc/dialogue_bubble"]
 margin_left = -45.0
-margin_top = -11.0
-margin_right = 140.0
-margin_bottom = 31.0
-rect_scale = Vector2( 0.493999, 0.446756 )
+margin_top = -7.97154
+margin_right = 171.0
+margin_bottom = 22.0285
+rect_scale = Vector2( 0.42157, 0.443156 )
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -2
+text = "Only through journey can you repair your broken soul"
 autowrap = true
 max_lines_visible = 3
 __meta__ = {

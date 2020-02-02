@@ -1,8 +1,6 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=2]
-[ext_resource path="res://entities/vortex/vortex.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/scene4(desert)/assets/adaddaaan_1.png" type="Texture" id=4]
 [ext_resource path="res://scenes/scene4(desert)/npc.gd" type="Script" id=5]
 [ext_resource path="res://fonts/minecraft.tres" type="DynamicFont" id=6]
@@ -38,9 +36,6 @@ limit_left = -76
 limit_right = 369
 limit_bottom = 103
 
-[node name="animated_sprite" parent="Player" index="2"]
-frame = 0
-
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
 
@@ -71,30 +66,17 @@ shape = SubResource( 2 )
 position = Vector2( 381.102, -55.8054 )
 shape = SubResource( 3 )
 
-[node name="force_area" parent="." instance=ExtResource( 2 )]
-position = Vector2( -35.916, -40.4086 )
-z_index = -3
-horizontal_boost = 90
-vertical_boost = -140
-
 [node name="Roof" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Roof"]
 position = Vector2( 165.257, -177.947 )
 shape = SubResource( 1 )
 
-[node name="Vortex" parent="." instance=ExtResource( 3 )]
-position = Vector2( 50.8836, -59.0764 )
-boost = 150
-
 [node name="npc" type="StaticBody2D" parent="."]
 position = Vector2( 338.225, -6.9248 )
 z_index = 1
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-sample_text = "Some sample text"
+sample_text = "Go forth on your journey"
 
 [node name="Sprite" type="Sprite" parent="npc"]
 position = Vector2( 6.82074, 18.5 )
@@ -112,10 +94,10 @@ scale = Vector2( 0.505, 0.436 )
 texture = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="npc/dialogue_bubble"]
-margin_left = -45.0
-margin_top = -11.0
-margin_right = 140.0
-margin_bottom = 31.0
+margin_left = -43.2191
+margin_top = -8.9373
+margin_right = 141.781
+margin_bottom = 33.0627
 rect_scale = Vector2( 0.493999, 0.446756 )
 custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
