@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/scene5(plains)/assets/plains.png" type="Texture" id=1]
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/Fader/Fader.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 225.249, 10 )
@@ -51,5 +52,7 @@ vertical_boost = -150
 [node name="force_area4" parent="." instance=ExtResource( 3 )]
 position = Vector2( -118.467, -79.737 )
 vertical_boost = -150
+
+[node name="CanvasLayer2" parent="." instance=ExtResource( 4 )]
 
 [editable path="Player"]

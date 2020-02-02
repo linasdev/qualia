@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://entities/npc/real_anub.png" type="Texture" id=7]
 [ext_resource path="res://entities/scene_changer/scene_changer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/npc/textbox.png" type="Texture" id=9]
+[ext_resource path="res://entities/Fader/Fader.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/scene4(desert)/assets/Coyotes Howling at Moon Sound Effect Free Coyote Sounds.ogg" type="AudioStream" id=42]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -38,9 +39,6 @@ limit_right = 369
 limit_bottom = 103
 drag_margin_top = 0.5
 drag_margin_bottom = 0.0
-
-[node name="animated_sprite" parent="Player" index="2"]
-frame = 1
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
@@ -136,4 +134,8 @@ visible = false
 position = Vector2( 139.859, 8.84772 )
 target_scene = "res://scenes/scene3(atlas)/scene3(atlas).tscn"
 
+[node name="CanvasLayer2" parent="." instance=ExtResource( 10 )]
+
 [editable path="Player"]
+
+[editable path="CanvasLayer2"]
