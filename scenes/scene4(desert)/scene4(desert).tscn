@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/scene4(desert)/assets/adaddaaan_1.png" type="Texture" id=4]
 [ext_resource path="res://scenes/scene4(desert)/npc.gd" type="Script" id=5]
 [ext_resource path="res://fonts/minecraft.tres" type="DynamicFont" id=6]
-[ext_resource path="res://scenes/scene4(desert)/assets/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.png" type="Texture" id=7]
+[ext_resource path="res://entities/npc/real_anub.png" type="Texture" id=7]
 [ext_resource path="res://entities/scene_changer/scene_changer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://entities/npc/textbox.png" type="Texture" id=9]
 [ext_resource path="res://scenes/scene4(desert)/assets/Coyotes Howling at Moon Sound Effect Free Coyote Sounds.ogg" type="AudioStream" id=42]
@@ -34,7 +34,7 @@ horizontal_slowdown = 200
 [node name="camera" parent="Player" index="1"]
 zoom = Vector2( 0.19, 0.19 )
 limit_left = -76
-limit_right = 327
+limit_right = 369
 limit_bottom = 103
 drag_margin_top = 0.5
 drag_margin_bottom = 0.0
@@ -88,8 +88,8 @@ shape = SubResource( 1 )
 position = Vector2( 50.8836, -59.0764 )
 boost = 150
 
-[node name="npc" type="Area2D" parent="."]
-position = Vector2( 297.334, -25.3954 )
+[node name="npc" type="StaticBody2D" parent="."]
+position = Vector2( 338.225, -6.9248 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
