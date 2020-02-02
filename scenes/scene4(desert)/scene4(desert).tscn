@@ -38,6 +38,9 @@ limit_left = -76
 limit_right = 369
 limit_bottom = 103
 
+[node name="animated_sprite" parent="Player" index="2"]
+frame = 0
+
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
 

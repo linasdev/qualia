@@ -40,6 +40,9 @@ limit_top = -127
 limit_right = 327
 limit_bottom = 52
 
+[node name="animated_sprite" parent="Player" index="2"]
+frame = 0
+
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
 
@@ -162,5 +165,6 @@ __meta__ = {
 [node name="scene_changer" parent="." instance=ExtResource( 6 )]
 visible = false
 position = Vector2( -135.02, -32.8715 )
+target_scene = "res://scenes/scene6(forest)/scene6(forest).tscn"
 
 [editable path="Player"]

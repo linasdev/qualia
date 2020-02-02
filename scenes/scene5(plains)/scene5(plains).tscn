@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/scene5(plains)/assets/plains.png" type="Texture" id=1]
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://entities/Fader/Fader.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/scene5(plains)/platform.png" type="Texture" id=5]
 [ext_resource path="res://entities/scene_changer/scene_changer.tscn" type="PackedScene" id=6]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 225.249, 10 )
+[ext_resource path="res://scenes/scene5(plains)/assets/lava.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 9.12447, 3.26439 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 177.42, 10 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,12 +23,6 @@ follow_viewport_enable = true
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
 texture = ExtResource( 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0.497162, 89.8958 )
-shape = SubResource( 1 )
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -187.917, 63.4171 )
 
@@ -35,7 +30,10 @@ position = Vector2( -187.917, 63.4171 )
 limit_left = -225
 limit_top = -125
 limit_right = 225
-limit_bottom = 105
+limit_bottom = 125
+
+[node name="animated_sprite" parent="Player" index="2"]
+frame = 0
 
 [node name="force_area" parent="." instance=ExtResource( 3 )]
 position = Vector2( -127.499, 45.9685 )
@@ -49,12 +47,8 @@ vertical_boost = -150
 position = Vector2( -13.1078, -34.2679 )
 vertical_boost = -150
 
-[node name="force_area4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 46.9964, -9.02614 )
-vertical_boost = -150
-
 [node name="force_area6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 131.142, 48.2497 )
+position = Vector2( 118.034, 48.6469 )
 vertical_boost = -150
 
 [node name="force_area7" parent="." instance=ExtResource( 3 )]
@@ -81,10 +75,26 @@ shape = SubResource( 2 )
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
-polygon = PoolVector2Array( -224.122, 81.5257, -223.492, -126.455, 223.351, -125.194, 222.09, 101.694, 246.67, -132.757, -237.987, -131.497 )
+polygon = PoolVector2Array( -224.149, 80.9676, -223.58, -125.505, 221.786, -124.936, 223.493, 102.013, -135.417, 103.719, -134.848, 80.3988, -216.186, 80.9676, -215.617, 101.444, -155.893, 97.4626, -150.206, 115.664, 60.2486, 127.04, 258.758, 127.609, 238.281, -127.211, 233.162, -131.193, -233.818, -131.762, -238.369, 83.8116 )
 
 [node name="scene_changer" parent="." instance=ExtResource( 6 )]
 position = Vector2( 211.376, -93.682 )
 target_scene = "res://scenes/scene6(forest)/scene6(forest).tscn"
+
+[node name="lava_changer" parent="." instance=ExtResource( 6 )]
+position = Vector2( 211.376, -93.682 )
+target_scene = "res://scenes/scene5(plains)/scene5(plains).tscn"
+
+[node name="Lava" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Lava"]
+position = Vector2( 44.366, 91.0072 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Lava"]
+position = Vector2( 44.577, 98 )
+scale = Vector2( 1.02515, 0.779938 )
+texture = ExtResource( 7 )
+[connection signal="body_entered" from="Lava" to="lava_changer" method="_on_Lava_body_entered"]
 
 [editable path="Player"]

@@ -14,3 +14,7 @@ func _process(delta):
 	if time_passed >= 1:
 		get_tree().change_scene(target_scene)
 		time_passed = -1
+
+
+func _on_Lava_body_entered(body):
+	interact()

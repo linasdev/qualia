@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/scene6(forest)/assets/forest.png" type="Texture" id=2]
 [ext_resource path="res://entities/force_area/force_area.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/torch/torch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/Fader/Fader.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/scene_changer/scene_changer.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,9 +18,6 @@ limit_left = -222
 limit_top = -124
 limit_right = 222
 limit_bottom = 124
-
-[node name="animated_sprite" parent="Player" index="2"]
-frame = 0
 
 [node name="Node2D" parent="Player" instance=ExtResource( 4 )]
 position = Vector2( -0.486633, -0.237831 )
@@ -36,12 +35,44 @@ position = Vector2( 112, 67 )
 polygon = PoolVector2Array( -335.25, 17.4803, -334.552, -192.02, 112.382, -192.718, 110.985, 10.4969, 146.6, -205.987, -354.105, -206.685 )
 
 [node name="force_area" parent="." instance=ExtResource( 3 )]
-position = Vector2( 21.8652, 13.2502 )
-vertical_boost = -1000
+position = Vector2( 105.137, 45.663 )
+horizontal_boost = 300
+vertical_boost = -10
+
+[node name="force_area4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -89.8668, 46.4097 )
+horizontal_boost = 300
+vertical_boost = -10
+
+[node name="force_area3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -19.5072, 43.2475 )
+horizontal_boost = 300
+vertical_boost = -10
+
+[node name="force_area2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 48.4806, 44.0819 )
+horizontal_boost = 300
+vertical_boost = -10
+
+[node name="force_area5" parent="." instance=ExtResource( 3 )]
+position = Vector2( -153.704, 52.327 )
+horizontal_boost = 300
+vertical_boost = -10
 
 [node name="Backgraund" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
 z_index = -6
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="scene_changer" parent="." instance=ExtResource( 6 )]
+position = Vector2( -209.049, 65.1643 )
+target_scene = "res://scenes/scene5(plains)/scene5(plains).tscn"
+
+[node name="Fader" parent="." instance=ExtResource( 5 )]
+offset = Vector2( 300, 0 )
+transform = Transform2D( 1, 0, 0, 1, 300, 0 )
 
 [editable path="Player"]
