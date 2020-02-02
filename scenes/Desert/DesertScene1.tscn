@@ -19,9 +19,6 @@ position = Vector2( -223.611, -51.5052 )
 limit_left = -270
 limit_right = 267
 
-[node name="animated_sprite" parent="Player" index="2"]
-frame = 0
-
 [node name="Borders" type="StaticBody2D" parent="."]
 
 [node name="Floor" type="CollisionShape2D" parent="Borders"]
