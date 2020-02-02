@@ -1,21 +1,31 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/force_area/force_area.gd" type="Script" id=1]
 [ext_resource path="res://entities/force_area/force_area.png" type="Texture" id=2]
+[ext_resource path="res://entities/force_area/rodykle.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 18.793, 19.0845 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 22.8799
 
 [node name="force_area" type="Area2D"]
 scale = Vector2( 0.166947, 0.166947 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.487679, -0.487687 )
-scale = Vector2( 0.588529, 0.573285 )
+scale = Vector2( 1.24543, 1.21317 )
 texture = ExtResource( 2 )
+
+[node name="rodykle" type="Sprite" parent="."]
+position = Vector2( 0.117893, -0.0789629 )
+scale = Vector2( 1.44042, 1.44042 )
+texture = ExtResource( 3 )
+offset = Vector2( 0.624581, -2.32617 )
 [connection signal="body_entered" from="." to="." method="_on_force_area_entered"]
 [connection signal="body_exited" from="." to="." method="_on_force_area_exited"]
