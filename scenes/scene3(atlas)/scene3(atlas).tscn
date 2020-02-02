@@ -26,6 +26,9 @@ horizontal_slowdown = 200
 limit_left = -154
 limit_right = 327
 
+[node name="animated_sprite" parent="Player" index="2"]
+frame = 1
+
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2( 7.62939e-06, -3.8147e-06 )
 
